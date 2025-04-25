@@ -3,20 +3,23 @@ const mongoose = require('mongoose');
 const planBookingSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     selectedPlan: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
-    bookedAt: {
+    createdAt: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 });
 
 module.exports = mongoose.model('PlanBooking', planBookingSchema);
